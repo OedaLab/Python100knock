@@ -1,0 +1,2 @@
+# Python100knock
+Pythonを修得するための100本ノック
