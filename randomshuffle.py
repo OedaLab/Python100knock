@@ -1,6 +1,6 @@
 import random
 
-a = [i for i in range(10)]
-random.shuffle(a)
+num = [i for i in range(10)]
+random.shuffle(num)
 
-print(a)
+print(num)
