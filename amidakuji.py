@@ -13,6 +13,7 @@
 # 作戦
 # うーん，次のようにするのが簡単かな．
 '''
+0 1 2 3 4 5 6
 0,1,0,0,0,0,0
 0,0,0,1,0,0,0
 0,0,0,0,0,1,0
@@ -27,6 +28,17 @@ data = [
     [0,0,1],
     ]
 
+data2 = [
+    [1,0,1,0],
+    [0,1,0,1],
+    [1,0,0,1],
+    [1,0,1,0],
+    [0,1,0,1],
+    [0,0,1,0],
+    [0,1,0,1],
+    [1,0,0,0]
+]
+data = data2
 # あみだくじの本数
 linenum = len(data[0])
 
@@ -41,15 +53,19 @@ for j in range(len(data)):
     added.append(line)
 
 # position -> 0,2,4,6 つまり．ラインの最大値はlinenum*2
-position = 4
-stage = 0
-while(stage<len(added)):
-    print(stage, position)
-    if added[stage][position+1]==1 and position<len(added[stage]):
-        position += 2
-    elif added[stage][position-1]==1 and position>0:
-        position -= 2
+for p in range(len(data[0])+1):
+    position = p*2
+    stage = 0
+    while(stage<len(added)):
+        flag = 0
+        if (position<len(added[stage])-1):
+            if added[stage][position+1]==1:
+                position += 2
+                flag = 1
+        if (flag == 0 and position>0):
+            if added[stage][position-1]==1:
+                position -= 2
 
-    stage+=1
+        stage+=1
 
-print(position+1)
+    print(position//2+1)
