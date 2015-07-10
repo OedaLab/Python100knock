@@ -126,3 +126,4 @@ https://ja.wikipedia.org/wiki/ISBN
 [データ](./amida.csv)
 
 28. 数当てゲームを作れ．ただし，ドラコンクエストとする．プレイヤーのHPは1000として，外れるとドラゴンが攻撃する．HPが0になる前に当てると勝ち．
+[ソース](./draconquest.py)
