@@ -6,28 +6,37 @@ kana = [['あ', 'い', 'う', 'え', 'お'], #1
     ['は', 'ひ', 'ふ', 'へ', 'ほ'], #6
     ['ま', 'み', 'む', 'め', 'も'], #7
     ['や', 'ゆ', 'よ'], #8
-    ['ら', 'り', 'る', 'れ', 'ろ'],#9
+    ['ら', 'り', 'る', 'れ', 'ろ'], #9
     ['わ', 'を', 'ん']] #0
 
 message = []
-pre = ''
+pre = -1
 ct = 0
 while(1):
-    while(1):
+    flag = 1
+    while(flag):
         ch = input()
-        if ord('0') <= int(ch) and int(ct) <= ord('9'):
+        if ch == '.':
             break
-    if ch=='.':
-        break
-    if int(ch)==0:
-        num = 10
-    else:
-        num = int(ch)
+        if int(ch)<ord('0') or  ord('9') < int(ct):
+            flag = 0
 
+    if ch == '.':
+        break
+
+    if int(ch) == 0:
+        num = 10
+    num = int(ch)
+
+    if pre != num:
+        ct = 0
     if(ct==len(kana[num-1])):
         ct = 0
     print(kana[num-1][ct])
+
     message.append(kana[num-1][ct])
+    pre = num
+
     ct += 1
 
 print('your input = ', message)
