@@ -145,3 +145,4 @@ https://ja.wikipedia.org/wiki/ISBN
 [ソース](./ketaiinput.py)
 
 34. 0から9の数字が書かれたカードをランダムに配る．数字は重複しても良い．配られたカードで最大の数値を作れ．次に2番目に大きな数値を作れ．
+[ソース](./cardnumber.py)
